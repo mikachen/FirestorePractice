@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/shape_ui"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show user name"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show user id"
+        android:layout_marginTop="4dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/name"/>
+
+    <TextView
+        android:id="@+id/UserId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show mail"
+        android:textSize="16sp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/mail"/>
+
+    <Button
+        android:id="@+id/accept_button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="accept"
+        android:layout_marginEnd="8dp"
+        android:textSize="12sp"
+        tools:visibility="visible"
+        android:visibility="invisible"
+        android:backgroundTint="#76BA1B"
+        app:layout_constraintStart_toStartOf="@id/pending_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/pending_button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="pending"
+        android:enabled="false"
+        tools:visibility="visible"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        android:visibility="invisible"
+        android:backgroundTint="#AAAAAA"
+        app:layout_constraintEnd_toEndOf="@id/accept_button"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/decline_button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="decline"
+        android:visibility="invisible"
+        android:textSize="12sp"
+        tools:visibility="visible"
+        android:backgroundTint="#ff0000"
+        app:layout_constraintEnd_toEndOf="@id/accept_button"
+        app:layout_constraintStart_toStartOf="@id/pending_button"
+        app:layout_constraintTop_toBottomOf="@id/accept_button"/>
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="cancel"
+        android:visibility="invisible"
+        android:textSize="12sp"
+        tools:visibility="visible"
+        android:backgroundTint="#FF9797"
+        app:layout_constraintEnd_toEndOf="@id/accept_button"
+        app:layout_constraintStart_toStartOf="@id/pending_button"
+        app:layout_constraintTop_toBottomOf="@id/accept_button"/>
+
+    <Button
+        android:id="@+id/friends_button_view"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Friends"
+        android:enabled="false"
+        android:visibility="invisible"
+        android:textSize="12sp"
+        tools:visibility="visible"
+        android:textColor="@color/white"
+        android:backgroundTint="#7B7B7B"
+        app:layout_constraintEnd_toEndOf="@id/accept_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">firestoreGroup5</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+
+    <string name="tag_prompt">Choose Tag</string>
+
+    <string-array name="article_tag_array">
+        <item>\t\tBeauty</item>
+        <item>\t\tGossiping</item>
+        <item>\t\tSchoolLife</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_result">Search Result:\nEmail: %s\nName: %s\nUserId: %s</string>
+</resources>
