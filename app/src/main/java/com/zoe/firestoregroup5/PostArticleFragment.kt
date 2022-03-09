@@ -9,13 +9,14 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.firebase.Timestamp
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.zoe.firestoregroup5.databinding.FragmentFirstBinding
 
 
-class ArticleFragment : Fragment() {
+class PostArticleFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,7 +24,8 @@ class ArticleFragment : Fragment() {
     ): View? {
 
         val binding = FragmentFirstBinding.inflate(inflater, container, false)
-
+        val db = FirebaseFirestore.getInstance()
+        val ref = db.collection("Articles")
         val spinner = binding.tagSpinner
         val arrayAdapter =
             ArrayAdapter.createFromResource(requireContext(), R.array.article_tag_array,
@@ -45,10 +47,9 @@ class ArticleFragment : Fragment() {
             }
         }
 
-        val db = FirebaseFirestore.getInstance()
 
         binding.postButton.setOnClickListener {
-            val id = db.collection("articles").document().id
+            val id = ref.document().id
             val title = binding.edit1.text
             val content = binding.edit2.text
 
@@ -57,11 +58,11 @@ class ArticleFragment : Fragment() {
                 title = title.toString(),
                 content = content.toString(),
                 tag = tag,
-                created_time = FieldValue.serverTimestamp()
+                created_time = Timestamp.now()
             )
 
             if (content.isNotEmpty() && title.isNotEmpty()) {
-                db.collection("articles").document(id)
+                ref.document(id)
                     .set(art)
                     .addOnSuccessListener {
                         Toast.makeText(context, "Data added ", Toast.LENGTH_SHORT).show()
@@ -75,7 +76,7 @@ class ArticleFragment : Fragment() {
             }
         }
 
-        db.collection("articles").addSnapshotListener { snapshot, e ->
+        ref.addSnapshotListener { snapshot, e ->
             if (e != null) {
 //                Log.w("Listen", "Listen failed.", e)
                 return@addSnapshotListener
@@ -89,8 +90,7 @@ class ArticleFragment : Fragment() {
         }
 
         binding.getButton.setOnClickListener {
-            db.collection("articles")
-                .orderBy("created_time", Query.Direction.DESCENDING)
+            ref.orderBy("created_time", Query.Direction.DESCENDING)
                 .limit(3)
                 .get()
                 .addOnSuccessListener { it ->

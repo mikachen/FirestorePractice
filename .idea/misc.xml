@@ -7,6 +7,8 @@
         <entry key="app/src/main/res/drawable/shape_spinner.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/shape_ui.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/article_linear_view.xml" value="0.33958333333333335" />
+        <entry key="app/src/main/res/layout/fragment_blog.xml" value="0.33958333333333335" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_friends.xml" value="0.25" />
         <entry key="app/src/main/res/layout/friend_linear_view.xml" value="0.33" />

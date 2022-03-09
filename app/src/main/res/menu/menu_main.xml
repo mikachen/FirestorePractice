@@ -3,13 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.zoe.firestoregroup5.MainActivity">
     <item
-        android:id="@+id/articleFragment"
+        android:id="@+id/postArticleFragment"
         android:orderInCategory="100"
-        android:title="article"
+        android:title="postArticles"
         app:showAsAction="never" />
     <item
         android:id="@+id/friendsFragment"
         android:orderInCategory="100"
         android:title="friends"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/blogFragment"
+        android:orderInCategory="100"
+        android:title="blogs"
         app:showAsAction="never" />
 </menu>

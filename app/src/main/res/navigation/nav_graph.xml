@@ -3,24 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/friendsFragment">
+    app:startDestination="@id/blogFragment">
 
     <fragment
-        android:id="@+id/articleFragment"
-        android:name="com.zoe.firestoregroup5.ArticleFragment"
+        android:id="@+id/postArticleFragment"
+        android:name="com.zoe.firestoregroup5.PostArticleFragment"
         android:label="fragment_article"
-        tools:layout="@layout/fragment_first">
-        <action
-            android:id="@+id/action_FirstFragment_to_friendsFragment"
-            app:destination="@id/friendsFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_first"/>
     <fragment
         android:id="@+id/friendsFragment"
         android:name="com.zoe.firestoregroup5.FriendsFragment"
         android:label="fragment_friends"
-        tools:layout="@layout/fragment_friends" >
-        <action
-            android:id="@+id/action_friendsFragment_to_FirstFragment"
-            app:destination="@id/articleFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_friends" />
+    <fragment
+        android:id="@+id/blogFragment"
+        android:name="com.zoe.firestoregroup5.articles.BlogFragment"
+        android:label="fragment_blog"
+        tools:layout="@layout/fragment_blog" />
 </navigation>
